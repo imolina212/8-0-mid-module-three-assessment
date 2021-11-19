@@ -31,7 +31,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <body>
+      <body className='App'>
         <h1>Isidro's Garage Sale</h1>
         <Garage
           name={this.state.name}
