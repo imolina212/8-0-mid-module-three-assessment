@@ -10,7 +10,7 @@ class Cart extends React.Component {
   render() {
     let subtotal = this.props.cart.reduce((total, product) => total + product.price, 0)
     return (
-      <div className="right">
+      <div className="cart">
         <h3>Cart</h3>
         <ul>
           {this.props.cart.map((product) => (

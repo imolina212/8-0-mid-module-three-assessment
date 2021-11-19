@@ -27,16 +27,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <body className='App'>
-        <h1>Isidro's Garage Sale</h1>
-        <Garage
-          addToCart={this.addToCart}
-        />
-        <Cart 
-          cart={this.state.cart}
+      <div className='App'>
+        <div className="left">
+          <Garage
+            addToCart={this.addToCart}
           />
-        <Checkout total={formatPrice(this.state.cart.reduce((total, product) => total + product.price, 0) * 1.05)}/>
-      </body>
+        </div>
+        <div className='right'>
+          <Cart 
+            cart={this.state.cart}
+          />
+          <Checkout 
+            total={
+              formatPrice(this.state.cart.reduce((total, product) => total + product.price, 0) * 1.05)
+            }
+          />
+        </div>
+      </div>
     );
   }
 };

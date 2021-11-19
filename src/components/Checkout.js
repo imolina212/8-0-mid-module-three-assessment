@@ -60,7 +60,7 @@ class Checkout extends React.Component {
                             name='firstName'
                             value={this.state.firstName}
                             onChange={this.handleChange}/>
-                    </label>
+                    </label><br></br>
                     <label>
                         Last Name
                         <input 
@@ -69,7 +69,7 @@ class Checkout extends React.Component {
                             name='lastName'
                             value={this.state.lastName}
                             onChange={this.handleChange}/>
-                    </label>
+                    </label><br></br>
                     <label>
                         Email
                         <input 
@@ -78,7 +78,7 @@ class Checkout extends React.Component {
                             name='email'
                             value={this.state.email}
                             onChange={this.handleChange}/>
-                    </label>
+                    </label><br></br>
                     <label>
                         Credit Card
                         <input 
@@ -87,7 +87,7 @@ class Checkout extends React.Component {
                             name='creditCard'
                             value={this.state.creditCard}
                             onChange={this.handleChange}/>
-                    </label>
+                    </label><br></br>
                     <label>
                         Zip Code
                         <input 
@@ -96,7 +96,7 @@ class Checkout extends React.Component {
                             name='zipCode'
                             value={this.state.zipCode}
                             onChange={this.handleChange}/>
-                    </label>
+                    </label><br></br><br></br>
                     <button type="submit">Buy Now</button>
                 </form>
             </div>

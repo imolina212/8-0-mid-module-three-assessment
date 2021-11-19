@@ -1,13 +1,31 @@
 .App {
     margin: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
+    display: flex;
 }
 
 .products {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4, 1fr);
+}
+
+.left {
+    display: block;
+}
+
+.right {
+    display: flex;
+    width: 350px;
+    flex-flow: column nowrap;
+    margin-left: 100px;
+}
+
+.product-card {
     width: 200px;
+    margin: 50px;
+}
+
+#checkout {
+    display: flex;
+    flex-flow: column nowrap;
 }
