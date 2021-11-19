@@ -6,17 +6,7 @@ import formatPrice from '../helpers/formatPrice';
 
 class Cart extends React.Component {
   // const { name , price , description, img } = this.state;
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      price: 0,
-      subtotal: 0,
-      tax: 0,
-      total: 0,
-    };
-  }
-
+  
   render() {
     let subtotal = this.props.cart.reduce((total, product) => total + product.price, 0)
     return (

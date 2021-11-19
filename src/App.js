@@ -4,6 +4,7 @@ import Garage from "./components/Garage"
 import Cart from "./components/Cart"
 import Checkout from "./components/Checkout"
 import productData from "./data/productData"
+import formatPrice from "./helpers/formatPrice";
 // import formatPrice from "./helpers/formatPrice";
 
 
@@ -12,10 +13,6 @@ class App extends React.Component {
     super();
     this.state = {
       cart: [],
-      name: '',
-      price: 0,
-      description: '',
-      img: null,
 
     }
   }
@@ -33,16 +30,12 @@ class App extends React.Component {
       <body className='App'>
         <h1>Isidro's Garage Sale</h1>
         <Garage
-          name={this.state.name}
-          price={this.state.price}
-          description={this.state.description}
-          img={this.state.img}
           addToCart={this.addToCart}
         />
         <Cart 
           cart={this.state.cart}
           />
-        <Checkout />
+        <Checkout total={formatPrice(this.state.cart.reduce((total, product) => total + product.price, 0) * 1.05)}/>
       </body>
     );
   }
