@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      list: productData,
+      cart: [],
       name: '',
       price: 0,
       description: '',
@@ -20,12 +20,11 @@ class App extends React.Component {
     }
   }
 
-  handleSubmit = () => {
+  addToCart = (product) => {
+    let updatedCart = [...this.state.cart]
+    updatedCart.push(product)
     this.setState({
-      cart: '', 
-      subtotal: 0,
-      tax: 0,
-      total: 0,
+      cart: updatedCart,
     })
   }
 
@@ -38,9 +37,11 @@ class App extends React.Component {
           price={this.state.price}
           description={this.state.description}
           img={this.state.img}
+          addToCart={this.addToCart}
         />
         <Cart 
-          name/>
+          cart={this.state.cart}
+          />
         <Checkout />
       </body>
     );
