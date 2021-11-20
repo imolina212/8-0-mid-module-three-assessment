@@ -5,22 +5,27 @@ import productData from '../data/productData';
 import formatPrice from '../helpers/formatPrice';
 
 class Cart extends React.Component {
-  // const { name , price , description, img } = this.state;
-  
   render() {
     let subtotal = this.props.cart.reduce((total, product) => total + product.price, 0)
     return (
       <div className="cart">
-        <h3>Cart</h3>
+        <h2>Cart</h2>
         <ul>
-          {this.props.cart.map((product) => (
+          {this.props.cart.map((product, i) => (
             <li>
-              {product.name}: ${product.price}
+              {product.name}: ${product.price}{" "}
+              <a
+                href="#"
+                type="submit"
+                onClick={() => this.props.remove(i)}
+              >
+                remove
+              </a>
             </li>
           ))}
         </ul>
         <h3>Subtotal: {formatPrice(subtotal)}</h3>
-        <h3>Tax: {formatPrice(subtotal * .05)}</h3>
+        <h3>Tax: {formatPrice(subtotal * 0.05)}</h3>
         <h3>Total: {formatPrice(subtotal * 1.05)}</h3>
       </div>
     );

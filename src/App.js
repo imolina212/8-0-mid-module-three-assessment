@@ -3,9 +3,7 @@ import "./App.css";
 import Garage from "./components/Garage"
 import Cart from "./components/Cart"
 import Checkout from "./components/Checkout"
-import productData from "./data/productData"
 import formatPrice from "./helpers/formatPrice";
-// import formatPrice from "./helpers/formatPrice";
 
 
 class App extends React.Component {
@@ -18,11 +16,19 @@ class App extends React.Component {
   }
 
   addToCart = (product) => {
-    let updatedCart = [...this.state.cart]
-    updatedCart.push(product)
+    let updatedCart = [...this.state.cart];
+    updatedCart.push(product);
     this.setState({
       cart: updatedCart,
-    })
+    });
+  }
+
+  remove = (i) => {
+      let updatedCart = [...this.state.cart]
+      updatedCart.splice(i, 1)
+      this.setState({
+        cart: updatedCart,
+      });
   }
 
   render() {
@@ -36,6 +42,7 @@ class App extends React.Component {
         <div className='right'>
           <Cart 
             cart={this.state.cart}
+            remove={this.remove}
           />
           <Checkout 
             total={

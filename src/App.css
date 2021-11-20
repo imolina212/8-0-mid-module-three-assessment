@@ -1,6 +1,6 @@
 .App {
-    margin: 30px;
     display: flex;
+    justify-content: center;
 }
 
 .products {
@@ -21,11 +21,35 @@
 }
 
 .product-card {
-    width: 200px;
-    margin: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 250px;
+    margin: 25px;
+    padding: 25px;
+    gap: 10px;
+    border-radius: 15px;
+    background-color: #E7E9EB;
+}
+
+h4 {
+    margin: 0;
+}
+
+.cart li{
+    margin: 20px
 }
 
 #checkout {
     display: flex;
     flex-flow: column nowrap;
+}
+
+button {
+    border: 0;
+    border-radius: 30px;
+    background-color: #555555;
+    color: white;
+    padding: 10px;
+    width: 125px;
+    font-weight: bold;
 }
